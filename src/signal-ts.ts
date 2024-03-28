@@ -1,12 +1,10 @@
 import $ from 'signal-chain'
-import { createSolid, fromSolid, listenSolid } from './solid'
+import { createSolid, listenSolid } from './solid'
 
 const solid = {
   create: createSolid,
   listen: listenSolid,
-  primitive: {
-    create: fromSolid,
-  }
+
 }
 
 export default {

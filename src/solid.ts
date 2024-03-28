@@ -1,7 +1,7 @@
 import { createSignal, onCleanup, createEffect } from 'solid-js'
 import type { Accessor } from 'solid-js'
 import $ from 'signal-chain'
-import type { Chain, PrimitiveReadonly, ConnectedChain } from 'signal-chain'
+import type { Chain, ConnectedChain } from 'signal-chain'
 import { execute } from 'signal-chain'
 
 
@@ -41,22 +41,6 @@ export const createSolid: CreateCall = (listen1: Chain<void, any>, ...args: Chai
   onCleanup(() => execute(cleanup, true))
 
   return solidSignal
-}
-
-export const fromSolid = <V>(signal: Accessor<V>): PrimitiveReadonly<V> => {
-  const base = $.primitive.create(signal())
-
-  createEffect(() => {
-    base.value = signal()
-  })
-
-  return {
-    listen: base.listen,
-    disconnect: base.disconnect,
-    get value() {
-      return base.value
-   }
-  }
 }
 
 export const listenSolid = <V>(signal: Accessor<V>): ConnectedChain<void, V> => {
