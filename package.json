@@ -1,0 +1,41 @@
+{
+    "name": "signal-chain-solid",
+    "version": "0.1.1",
+    "author": "Christoph Franke",
+    "description": "Signal-Chain interface for SolidJS",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/christophfranke/signal-chain-solid.git"
+    },
+    "sideEffects": false,
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "solid-js",
+        "signal",
+        "declarative",
+        "reactive",
+        "state",
+        "chain"
+    ],
+    "main": "dist/signal-ts.js",
+    "types": "dist/signal-ts.d.ts",
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "test:w": "vitest",
+        "test": "tsc -p tsconfig.test.json && vitest run"
+    },
+    "devDependencies": {
+        "typescript": "^5.2.2",
+        "vitest": "^1.4.0"
+    },
+    "peerDependencies": {
+        "solid-js": "^1.8.16"
+    },
+    "dependencies": {
+        "signal-chain": "^0.7.3"
+    }
+}
