@@ -34,9 +34,10 @@ export const createSolid: CreateCall = (listen1: Chain<void, any>, ...args: Chai
   const [solidSignal, setSolidSignal] = createSignal(undefined as any, { equals: false })
 
   const context = {}
+  const status = { is: 'sync' } as any
   const cleanup = listener((value: any) => {
     setSolidSignal(() => value)
-  }, undefined, context)
+  }, undefined, context, status)
 
   onCleanup(() => execute(cleanup, true))
 
