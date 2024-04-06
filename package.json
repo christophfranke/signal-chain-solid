@@ -1,6 +1,6 @@
 {
     "name": "signal-chain-solid",
-    "version": "0.2.12",
+    "version": "0.2.13",
     "author": "Christoph Franke",
     "description": "Signal-Chain interface for SolidJS",
     "license": "MIT",
@@ -34,6 +34,6 @@
     },
     "peerDependencies": {
         "solid-js": "^1.8.16",
-        "signal-chain": "^0.11.1"
+        "signal-chain": "^0.11.2"
     }
 }
